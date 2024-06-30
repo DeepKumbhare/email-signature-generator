@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
+import Image from 'next/image'
 
-const EmailSignature = () => {
+const EmailSignature = forwardRef((props,ref) => {
   return (
-    <div>
+    <div ref={ref}>
         <table style={{ width: '100%', maxWidth: '600px', fontFamily: 'Arial, sans-serif', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', backgroundColor: '#ffffff' }}>
             <tbody>
                 <tr>
@@ -11,7 +12,12 @@ const EmailSignature = () => {
                             <tbody>
                                 <tr>
                                     <td style={{ padding: '0 10px 10px 0' }}>
-                                        <img src="https://via.placeholder.com/80" alt="Company Logo" style={{ width: '80px', height: 'auto', borderRadius: '8px' }} />
+                                        <Image 
+                                            src="https://via.placeholder.com/150"
+                                            width={150}
+                                            height={150}
+                                            alt="Picture of the author"
+                                        />
                                     </td>
                                     <td style={{ padding: '0 10px' }}>
                                         <table style={{ width: '100%' }}>
@@ -57,6 +63,6 @@ const EmailSignature = () => {
         </table>
     </div>
   )
-}
+})
 
 export default EmailSignature
